@@ -1,5 +1,5 @@
 import React from "react";
-import { usePlaceHolder } from "./usePlaceHolder";
+import { usePlaceHolder } from "./hook/use[PlaceHolder]";
 
 export default function PlaceHolder() {
    const { text } = usePlaceHolder();
