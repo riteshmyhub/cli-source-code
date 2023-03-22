@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function PlaceHolder() {
-   let name = "PlaceHolder hook";
+export default function Placeholder() {
+   let name = "placeHolder hook";
    return { name };
 }

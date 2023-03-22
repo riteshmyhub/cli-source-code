@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function usePlaceHolder() {
-   const [test, setTest] = useState("PlaceHolder component page!");
+export default function usePlaceholder() {
+   const [test, setTest] = useState("Placeholder component page!");
    return { test };
 }

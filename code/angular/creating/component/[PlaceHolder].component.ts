@@ -1,9 +1,9 @@
 import { Component } from "@angular/core";
 
 @Component({
-   selector: "PlaceHolder-root",
+   selector: "placeholder-root",
    templateUrl: `<p>{title} Component work</p>`,
 })
-export class PlaceHolderComponent {
-   title = "PlaceHolder";
+export class PlaceholderComponent {
+   title = "placeholder";
 }

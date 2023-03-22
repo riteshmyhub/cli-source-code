@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
-import PlaceHolder from "./PlaceHolder";
+import Placeholder from "./Placeholder";
 
-test("renders PlaceHolder component", () => {
-   render(<PlaceHolder />);
+test("renders Placeholder component", () => {
+   render(<Placeholder />);
 });

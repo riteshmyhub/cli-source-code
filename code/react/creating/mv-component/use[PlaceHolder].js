@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function usePlaceHolder() {
-   const [test, setTest] = useState("PlaceHolder");
+export default function usePlaceholder() {
+   const [test, setTest] = useState("Placeholder");
    return { test };
 }

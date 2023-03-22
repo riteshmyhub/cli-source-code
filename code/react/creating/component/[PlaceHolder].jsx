@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 
-export default function PlaceHolder() {
+export default function Placeholder() {
    const [text, setText] = useState(null);
 
    useEffect(() => {
-      setText("PlaceHolder page work!");
+      setText("placeHolder page work!");
       return () => {};
    }, []);
 

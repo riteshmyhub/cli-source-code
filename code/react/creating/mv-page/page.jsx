@@ -1,7 +1,7 @@
 import React from "react";
-import { usePlaceHolder } from "./use[PlaceHolder]";
+import { usePlaceholder } from "./use[Placeholder]";
 
-export default function PlaceHolder() {
-   const { text } = usePlaceHolder();
+export default function Placeholder() {
+   const { text } = usePlaceholder();
    return <div>{text} page work!</div>;
 }

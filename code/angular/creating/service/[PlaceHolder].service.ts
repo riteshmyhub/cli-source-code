@@ -1,4 +1,4 @@
-export class PlaceHolderService {
+export class PlaceholderService {
    private heroes: any[] = [];
 
    constructor() {}
