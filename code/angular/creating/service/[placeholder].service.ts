@@ -1,10 +1,9 @@
+import { Injectable } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root'
+})
 export class PlaceholderService {
-   private heroes: any[] = [];
 
-   constructor() {}
-
-   getHeroes() {
-      this.heroes.push([1, 2, 3, 4]);
-      return this.heroes;
-   }
+  constructor() { }
 }
