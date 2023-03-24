@@ -45,7 +45,7 @@ function PageRoutes() {
                   </div>
                }
                caseSensitive>
-               <Route index element={<Navigate to="profile" replace />} caseSensitive />
+               <Route index element={<Navigate to="users" replace />} caseSensitive />
                <Route path="users" element={<p>users</p>} />
                {/* route parameter */}
                <Route path="users/:id" element={<Component />} />
