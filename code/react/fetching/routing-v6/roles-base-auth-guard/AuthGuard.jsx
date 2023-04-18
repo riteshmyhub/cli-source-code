@@ -12,7 +12,7 @@ const api = {
 
 export default function AuthGuard({ allowedRoles }) {
    const { location } = useLocation();
-   const token = localStorage.getItem("token");
+   const token = localStorage.getItem("token") || true;
    const { loading, isAuthenticate, user } = api;
 
    useEffect(() => {
@@ -28,13 +28,13 @@ export default function AuthGuard({ allowedRoles }) {
             if (profile?.name) {
                return <RouterOutlet />;
             } else {
-               return "pleace create profile";
+               return "please create profile";
             }
          } else {
-            return <p>page 404</p>;
+            return <p>you are unauthorized for admin page</p>;
          }
       } else {
-         return <Navigate to="/auth" state={{ form: location }} replace />;
+         return <Navigate to="/login" state={{ form: location }} replace />;
       }
    }
 }

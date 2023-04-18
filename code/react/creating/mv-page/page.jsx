@@ -1,5 +1,5 @@
 import React from "react";
-import { usePlaceholder } from "./usePlaceholder";
+import usePlaceholder from "./usePlaceholder";
 
 export default function Placeholder() {
    const { text } = usePlaceholder();
