@@ -3,5 +3,5 @@ import usePlaceholder from "./usePlaceholder";
 
 export default function Placeholder() {
    const { text } = usePlaceholder();
-   return <div>{text} page work!</div>;
+   return <div>{text}</div>;
 }
