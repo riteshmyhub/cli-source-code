@@ -1,0 +1,32 @@
+step 1 = installation redux react-redux redux-thunk redux-devtools-extension
+
+------------------------------------------------------------------
+step 2 = entry level component 
+
+import { Provider } from "react-redux";
+import store from "./redux/store.js";
+
+<AppProvider>
+   <App />
+</AppProvider>
+
+-----------------------------------------------------------------
+step 3 = App.jsx 
+
+import { useDispatch, useSelector } from "react-redux";
+import UserService from "./user.service";
+
+export default function App{
+    const { loading , users } = useSelector((state) => state.userReducer);
+    const dispatch = useDispatch;
+    const { _get_user } = new UserService();
+
+    useEffect(() => {
+      dispatch(_get_user());
+      return () => {};
+   }, []);
+
+    return <div></div>
+}
+
+-----------------------------------------------------------------

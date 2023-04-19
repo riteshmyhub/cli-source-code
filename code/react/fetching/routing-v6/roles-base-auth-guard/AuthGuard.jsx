@@ -3,7 +3,6 @@ import { useLocation, Outlet as RouterOutlet, Navigate } from "react-router-dom"
 
 const api = {
    loading: false,
-   isAuthenticate: true,
    user: {
       profile: { name: "testuser" },
       allowRoles: ["user", "admin"],
@@ -13,7 +12,7 @@ const api = {
 export default function AuthGuard({ allowedRoles }) {
    const { location } = useLocation();
    const token = localStorage.getItem("token") || true;
-   const { loading, isAuthenticate, user } = api;
+   const { loading, user } = api;
 
    useEffect(() => {
       return () => {};
@@ -22,7 +21,7 @@ export default function AuthGuard({ allowedRoles }) {
    if (loading) {
       return <div>auth checking....</div>;
    } else {
-      if (token && isAuthenticate && user) {
+      if (token && user) {
          const { allowRoles, profile } = user;
          if (allowRoles.find((role) => allowedRoles?.includes(role))) {
             if (profile?.name) {
