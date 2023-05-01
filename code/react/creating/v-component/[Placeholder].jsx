@@ -4,7 +4,7 @@ export default function Placeholder() {
    const [text, setText] = useState(null);
 
    useEffect(() => {
-      setText("PlaceHolder component work!");
+      setText("Placeholder component work!");
       return () => {};
    }, []);
 
