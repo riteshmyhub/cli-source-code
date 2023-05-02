@@ -1,4 +1,4 @@
-type PlaceHolderProps = {
+type PlaceholderProps = {
    title?: string;
    color?: "light" | "dark";
    styles?: React.CSSProperties;
@@ -6,7 +6,7 @@ type PlaceHolderProps = {
    handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
    children?: React.ReactNode;
 };
-export default function PlaceHolder({ title, color, styles, handleClick, handleChange, children }: PlaceHolderProps): JSX.Element {
+export default function Placeholder({ title, color, styles, handleClick, handleChange, children }: PlaceholderProps): JSX.Element {
    return (
       <div style={styles}>
          {color}
@@ -20,7 +20,7 @@ export default function PlaceHolder({ title, color, styles, handleClick, handleC
 
 {
    /* 
- <PlaceHolder
+ <Placeholder
      title="text"
      color="dark"
      styles={{ padding: "10px" }}
@@ -31,6 +31,6 @@ export default function PlaceHolder({ title, color, styles, handleClick, handleC
         console.log(e.target.value);
      }}>
    <p>tempore veniam similique itaque?</p>
- </PlaceHolder>
+ </Placeholder>
  */
 }
