@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 export default function Placeholder(): JSX.Element {
-   const [text, setText] = useState<string>("");
+   const [text, setText] = useState<null | string>(null);
 
    useEffect(() => {
       setText("Placeholder component work!");

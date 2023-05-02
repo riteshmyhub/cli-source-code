@@ -1,10 +1,11 @@
 import usePlaceholder from "./usePlaceholder";
 
 export default function Placeholder(): JSX.Element {
-   const { text } = usePlaceholder();
+   const { hero, value } = usePlaceholder();
    return (
       <div>
-         <p>{text}</p>
+         <p>{hero}</p>
+         <p>{value.text}</p>
       </div>
    );
 }
