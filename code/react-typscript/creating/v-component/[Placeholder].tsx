@@ -1,9 +1,5 @@
 import { useState, useEffect } from "react";
 
-type propsType = {
-   text: string;
-};
-// Placeholder({test}:propsType)
 export default function Placeholder(): JSX.Element {
    const [text, setText] = useState<string>("");
 
