@@ -7,7 +7,7 @@ import usePlaceholder from "./usePlaceholder";
 describe("usePlaceholder hook testing", () => {
    it("is usePlaceholder text return string", () => {
       const { result } = renderHook(usePlaceholder);
-      expect(typeof result.current.text).toBe("string");
+      expect(typeof result.current.hero).toBe("string");
    });
 });
 

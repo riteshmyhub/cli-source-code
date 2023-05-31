@@ -1,10 +1,16 @@
 import { Navigate, Route, Routes, Outlet as RouterOutlet, useParams } from "react-router-dom";
 import AuthGuard from "../guards/AuthGuard";
 
-export default function PageRoutes() {
+export default function PageRoutes(): JSX.Element {
    return (
       <Routes>
-         <Route path="login" element={<p>login</p>} caseSensitive />
+         {/* auth */}
+         <Route path="auth" element={<RouterOutlet />} caseSensitive>
+            <Route index element={<Navigate to="login" replace />} caseSensitive />
+            <Route path="login" element={<p>login page work!</p>} caseSensitive />
+            <Route path="register" element={<p>register page work!</p>} caseSensitive />
+         </Route>
+
          {/* home */}
          <Route path="/" element={<p>Home</p>} caseSensitive />
 

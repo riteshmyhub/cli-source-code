@@ -9,7 +9,7 @@ const api = {
    },
 };
 
-export default function AuthGuard({ allowedRoles }) {
+export default function AuthGuard({ clientRoles }) {
    const { location } = useLocation();
    const token = localStorage.getItem("token") || true;
    const { loading, user } = api;
@@ -23,14 +23,14 @@ export default function AuthGuard({ allowedRoles }) {
    } else {
       if (token && user) {
          const { allowRoles, profile } = user;
-         if (allowRoles.find((role) => allowedRoles?.includes(role))) {
+         if (allowRoles && allowRoles.find((role) => clientRoles?.includes(role))) {
             if (profile?.name) {
                return <RouterOutlet />;
             } else {
                return "please create profile";
             }
          } else {
-            return <p>you are unauthorized for admin page</p>;
+            return <p>you are unauthorized for this page</p>;
          }
       } else {
          return <Navigate to="/login" state={{ form: location }} replace />;
