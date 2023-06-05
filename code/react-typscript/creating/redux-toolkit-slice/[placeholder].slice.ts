@@ -1,4 +1,5 @@
 import { PayloadAction, createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import axios from "axios";
 
 type PlaceholderState = {
    loading: boolean;
@@ -17,20 +18,20 @@ export const placeholderSlice = createSlice({
    initialState: initialState,
    reducers: {},
    extraReducers(builder) {
-      const { _getdata } = new PlaceholderService();
+      const { _getusers } = new PlaceholderService();
 
       /*________________getAddress_________________*/
-      builder.addCase(_getdata.pending, (state) => {
+      builder.addCase(_getusers.pending, (state) => {
          state.loading = true;
       });
 
-      builder.addCase(_getdata.fulfilled, (state, action: PayloadAction<any[]>) => {
+      builder.addCase(_getusers.fulfilled, (state, action: PayloadAction<any[]>) => {
          state.loading = false;
-         state.addressList = action.payload;
+         state.placeholder = action.payload;
          state.error = null;
       });
 
-      builder.addCase(_getdata.rejected, (state, action) => {
+      builder.addCase(_getusers.rejected, (state, action) => {
          state.loading = false;
          state.error = action.error.message || "something went wrong!";
       });
@@ -41,9 +42,9 @@ export default placeholderSlice.reducer;
 
 class PlaceholderService {
    constructor() {}
-   _getusers = createAsyncThunk("/user/delete-address", async (addressID: string | undefined, thunkAPI) => {
+   _getusers = createAsyncThunk("/placeholder/test", async (_, thunkAPI) => {
       try {
-         const { data } = await http.get("https://dummyjson.com/users");
+         const { data } = await axios.get("https://dummyjson.com/users");
          alert(data.message);
          return data;
       } catch (error: any) {
